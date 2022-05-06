@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Lab4MVC.Models.Customer>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width = device-width , initial-scale=1" />
+    <title> Customer Library lab4</title>
+</head>
+<body>
+    <div style="font-family:Arial">
+        <h2>List</h2>
+        <p>
+             @Html.ActionLink("Create New","Create")
+        </p>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.CustomerId)</th>
+                    <th>@Html.DisplayNameFor(model => model.Name)</th>
+                    <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+                    <th>@Html.DisplayNameFor(model => model.Gender)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelitem => i.CustomerId)</td>
+                        <td>@Html.DisplayFor(modelitem => i.Name)</td>
+                        <td>@Html.DisplayFor(modelitem => i.PhoneNumber)</td>
+                        <td>@Html.DisplayFor(modelitem => i.Gender)</td>
+                        <th>@Html.ActionLink("Edit","Edit", new { id=i.CustomerId })</th>
+                        <th>@Html.ActionLink("Delete","DeleteId",new { id=i.CustomerId})</th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
