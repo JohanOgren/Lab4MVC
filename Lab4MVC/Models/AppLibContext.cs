@@ -44,15 +44,15 @@ namespace Lab4MVC
                 );
             modelBuilder.Entity<LinkTable>()
                 .HasData(
-                new { LinkTableId = 1, CustomerId = 1, BookId = 1, StartDate = new DateTime(2022 , 01 , 01), EndDate = new DateTime(2022 , 02 , 01), DateReturn = new DateTime(2022 , 01 , 28) },
-                new { LinkTableId = 2, CustomerId = 1, BookId = 8, StartDate = new DateTime(2022 , 02 , 02), EndDate = new DateTime(2022 , 03 , 14), DateReturn = new DateTime(2022 , 03 , 22) },
-                new { LinkTableId = 3, CustomerId = 2, BookId = 7, StartDate = new DateTime(2021 , 03 , 03), EndDate = new DateTime(2022 , 06 , 12), DateReturn = new DateTime(2022 , 05 , 15) },
-                new { LinkTableId = 4, CustomerId = 2, BookId = 6, StartDate = new DateTime(2021 , 04 , 05), EndDate = new DateTime(2021 , 07 , 24), DateReturn = new DateTime(2021 , 07 , 15) },
-                new { LinkTableId = 5, CustomerId = 3, BookId = 5, StartDate = new DateTime(2020 , 06 , 22), EndDate = new DateTime(2020 , 06 , 25), DateReturn = new DateTime(2021 , 12 , 15) },
-                new { LinkTableId = 6, CustomerId = 3, BookId = 4, StartDate = new DateTime(2021 , 03 , 24), EndDate = new DateTime(2021 , 12 , 24), DateReturn = new DateTime(2021 , 12 , 24) },
-                new { LinkTableId = 7, CustomerId = 4, BookId = 3, StartDate = new DateTime(2021 , 07 , 11), EndDate = new DateTime(2021 , 08 , 15), DateReturn = new DateTime(2021 , 08 , 15) },
-                new { LinkTableId = 8, CustomerId = 5, BookId = 2, StartDate = new DateTime(2021 , 09 , 02), EndDate = new DateTime(2021 , 11 , 01), DateReturn = new DateTime(2021 , 12 , 15) },
-                new { LinkTableId = 9, CustomerId = 5, BookId = 1, StartDate = new DateTime(2021 , 05 , 15), EndDate = new DateTime(2021 , 08 , 11), DateReturn = new DateTime(2021 , 08 , 12) }
+                new { LinkTableId = 1, CustomerId = 1, BookId = 1, StartDate = new DateTime(2022 , 01 , 01), EndDate = new DateTime(2022 , 02 , 01), Returned = true},
+                new { LinkTableId = 2, CustomerId = 1, BookId = 8, StartDate = new DateTime(2022 , 02 , 02), EndDate = new DateTime(2022 , 03 , 14), Returned = true },
+                new { LinkTableId = 3, CustomerId = 2, BookId = 7, StartDate = new DateTime(2021 , 03 , 03), EndDate = new DateTime(2022 , 06 , 12), Returned = true},
+                new { LinkTableId = 4, CustomerId = 2, BookId = 6, StartDate = new DateTime(2021 , 04 , 05), EndDate = new DateTime(2021 , 07 , 24), Returned = false},
+                new { LinkTableId = 5, CustomerId = 3, BookId = 5, StartDate = new DateTime(2020 , 06 , 22), EndDate = new DateTime(2020 , 06 , 25), Returned = true},
+                new { LinkTableId = 6, CustomerId = 3, BookId = 4, StartDate = new DateTime(2021 , 03 , 24), EndDate = new DateTime(2021 , 12 , 24), Returned = false},
+                new { LinkTableId = 7, CustomerId = 4, BookId = 3, StartDate = new DateTime(2021 , 07 , 11), EndDate = new DateTime(2021 , 08 , 15), Returned = true},
+                new { LinkTableId = 8, CustomerId = 5, BookId = 2, StartDate = new DateTime(2021 , 09 , 02), EndDate = new DateTime(2021 , 11 , 01), Returned = true},
+                new { LinkTableId = 9, CustomerId = 5, BookId = 1, StartDate = new DateTime(2021 , 05 , 15), EndDate = new DateTime(2021 , 08 , 11), Returned = false}
                 );
         }
 

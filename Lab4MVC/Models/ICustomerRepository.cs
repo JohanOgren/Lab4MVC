@@ -14,5 +14,8 @@ namespace Lab4MVC.Models
         Customer DeleteCustomerById(int CustomerId);
 
         Customer CreateNewCustomer(Customer customer);
+
+        Customer Update(int Id);
+        Customer Update(Customer customer);
     }
 }

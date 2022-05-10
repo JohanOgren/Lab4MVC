@@ -16,12 +16,12 @@ namespace Lab4MVC.Controllers
             _customerRepository = customerRepo;
         }
 
-        public ViewResult List()
+        public ViewResult AllCustomers()
         {
             return View(_customerRepository.GetAllCustomers);
         }
 
-        public ViewResult ListId(int id)
+        public ViewResult CustomerById(int id)
         {
             return View(_customerRepository.GetCustomerById(id));
         }
@@ -29,7 +29,7 @@ namespace Lab4MVC.Controllers
         public IActionResult DeleteId(int id)
         {
             _customerRepository.DeleteCustomerById(id);
-            var tillbaka = RedirectToAction("List");
+            var tillbaka = RedirectToAction("AllCustomers");
             return tillbaka;
         }
 
@@ -37,9 +37,31 @@ namespace Lab4MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                return View(_customerRepository.CreateNewCustomer(customer));
+                _customerRepository.CreateNewCustomer(customer);
+                return RedirectToAction("AllCustomers");
             }
             return View(customer);
+        }
+
+        public IActionResult Update(int id)
+        {
+
+            return View(_customerRepository.Update(id));
+        }
+
+        //PostUpdate
+        [HttpPost]
+        public IActionResult Update(Customer cust)
+        {
+            
+
+            if (ModelState.IsValid)
+            {
+                _customerRepository.Update(cust);
+                return RedirectToAction("AllCustomers");
+            }
+            return View(cust);
+
         }
 
     }

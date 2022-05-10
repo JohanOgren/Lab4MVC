@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,13 +15,11 @@ namespace Lab4MVC.Models
             _dbContext = dataLibraryDb;
         }
 
-        public IEnumerable<Books> GetAllBooksForCustomer
+        public IEnumerable<LinkTable> GetAllBooksForCustomer(int id)
         {
-            get
-            {
-                return _dbContext.Books;
-            }
+            var resultat = _dbContext.LinkTables.Include(l => l.Books)
+                    .Where(b => b.CustomerId == id);
+            return resultat;
         }
-
     }
-}
+} 

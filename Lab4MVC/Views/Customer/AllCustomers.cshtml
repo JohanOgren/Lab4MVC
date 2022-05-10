@@ -30,13 +30,13 @@
                         <td>@Html.DisplayFor(modelitem => i.Name)</td>
                         <td>@Html.DisplayFor(modelitem => i.PhoneNumber)</td>
                         <td>@Html.DisplayFor(modelitem => i.Gender)</td>
-                        <th>@Html.ActionLink("Edit","Edit", new { id=i.CustomerId })</th>
+                        <th>@Html.ActionLink("Update", "Update", new { id = i.CustomerId })</th>
                         <th>@Html.ActionLink("Delete","DeleteId",new { id=i.CustomerId})</th>
+                        <th>@Html.ActionLink("Info","BookByCustomer","Book",new { id=i.CustomerId})</th>
                     </tr>
                 }
             </tbody>
         </table>
     </div>
 </body>
-
 </html>

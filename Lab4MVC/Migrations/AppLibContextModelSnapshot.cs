@@ -176,11 +176,11 @@ namespace Lab4MVC.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DateReturn")
-                        .HasColumnType("datetime2");
-
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("Returned")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
@@ -199,8 +199,8 @@ namespace Lab4MVC.Migrations
                             LinkTableId = 1,
                             BookId = 1,
                             CustomerId = 1,
-                            DateReturn = new DateTime(2022, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndDate = new DateTime(2022, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Returned = true,
                             StartDate = new DateTime(2022, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -208,8 +208,8 @@ namespace Lab4MVC.Migrations
                             LinkTableId = 2,
                             BookId = 8,
                             CustomerId = 1,
-                            DateReturn = new DateTime(2022, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndDate = new DateTime(2022, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Returned = true,
                             StartDate = new DateTime(2022, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -217,8 +217,8 @@ namespace Lab4MVC.Migrations
                             LinkTableId = 3,
                             BookId = 7,
                             CustomerId = 2,
-                            DateReturn = new DateTime(2022, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndDate = new DateTime(2022, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Returned = true,
                             StartDate = new DateTime(2021, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -226,8 +226,8 @@ namespace Lab4MVC.Migrations
                             LinkTableId = 4,
                             BookId = 6,
                             CustomerId = 2,
-                            DateReturn = new DateTime(2021, 7, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndDate = new DateTime(2021, 7, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Returned = false,
                             StartDate = new DateTime(2021, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -235,8 +235,8 @@ namespace Lab4MVC.Migrations
                             LinkTableId = 5,
                             BookId = 5,
                             CustomerId = 3,
-                            DateReturn = new DateTime(2021, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndDate = new DateTime(2020, 6, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Returned = true,
                             StartDate = new DateTime(2020, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -244,8 +244,8 @@ namespace Lab4MVC.Migrations
                             LinkTableId = 6,
                             BookId = 4,
                             CustomerId = 3,
-                            DateReturn = new DateTime(2021, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndDate = new DateTime(2021, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Returned = false,
                             StartDate = new DateTime(2021, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -253,8 +253,8 @@ namespace Lab4MVC.Migrations
                             LinkTableId = 7,
                             BookId = 3,
                             CustomerId = 4,
-                            DateReturn = new DateTime(2021, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndDate = new DateTime(2021, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Returned = true,
                             StartDate = new DateTime(2021, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -262,8 +262,8 @@ namespace Lab4MVC.Migrations
                             LinkTableId = 8,
                             BookId = 2,
                             CustomerId = 5,
-                            DateReturn = new DateTime(2021, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndDate = new DateTime(2021, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Returned = true,
                             StartDate = new DateTime(2021, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -271,8 +271,8 @@ namespace Lab4MVC.Migrations
                             LinkTableId = 9,
                             BookId = 1,
                             CustomerId = 5,
-                            DateReturn = new DateTime(2021, 8, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndDate = new DateTime(2021, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Returned = false,
                             StartDate = new DateTime(2021, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });

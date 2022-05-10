@@ -29,6 +29,7 @@ namespace Lab4MVC
             services.AddDbContext<AppLibContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Connection")));
 
             services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IBookRepository, BookRepository>();  
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,7 +56,7 @@ namespace Lab4MVC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Customer}/{action=List}/{id?}");
+                    pattern: "{controller=Customer}/{action=AllCustomers}/{id?}");
             });
         }
     }

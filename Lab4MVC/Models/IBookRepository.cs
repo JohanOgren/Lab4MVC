@@ -7,6 +7,7 @@ namespace Lab4MVC.Models
 {
     public interface IBookRepository
     {
-        IEnumerable<Books> GetAllBooksForCustomer { get; }
+        IEnumerable<LinkTable> GetAllBooksForCustomer(int id);
+
     }
 }

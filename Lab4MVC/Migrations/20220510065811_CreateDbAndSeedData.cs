@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Lab4MVC.Migrations
 {
-    public partial class CreateAndSeedData : Migration
+    public partial class CreateDbAndSeedData : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -47,7 +47,7 @@ namespace Lab4MVC.Migrations
                     BookId = table.Column<int>(nullable: false),
                     StartDate = table.Column<DateTime>(nullable: false),
                     EndDate = table.Column<DateTime>(nullable: false),
-                    DateReturn = table.Column<DateTime>(nullable: false)
+                    Returned = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -95,18 +95,18 @@ namespace Lab4MVC.Migrations
 
             migrationBuilder.InsertData(
                 table: "LinkTables",
-                columns: new[] { "LinkTableId", "BookId", "CustomerId", "DateReturn", "EndDate", "StartDate" },
+                columns: new[] { "LinkTableId", "BookId", "CustomerId", "EndDate", "Returned", "StartDate" },
                 values: new object[,]
                 {
-                    { 1, 1, 1, new DateTime(2022, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 2, 8, 1, new DateTime(2022, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 3, 7, 2, new DateTime(2022, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2022, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 4, 6, 2, new DateTime(2021, 7, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 7, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 5, 5, 3, new DateTime(2021, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2020, 6, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2020, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 6, 4, 3, new DateTime(2021, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 7, 3, 4, new DateTime(2021, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 8, 2, 5, new DateTime(2021, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 9, 1, 5, new DateTime(2021, 8, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { 1, 1, 1, new DateTime(2022, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), true, new DateTime(2022, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 2, 8, 1, new DateTime(2022, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), true, new DateTime(2022, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 3, 7, 2, new DateTime(2022, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), true, new DateTime(2021, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 4, 6, 2, new DateTime(2021, 7, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), false, new DateTime(2021, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 5, 5, 3, new DateTime(2020, 6, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), true, new DateTime(2020, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 6, 4, 3, new DateTime(2021, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), false, new DateTime(2021, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 7, 3, 4, new DateTime(2021, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), true, new DateTime(2021, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 8, 2, 5, new DateTime(2021, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), true, new DateTime(2021, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 9, 1, 5, new DateTime(2021, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), false, new DateTime(2021, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.CreateIndex(
