@@ -14,32 +14,27 @@
         <table border="1">
             <thead>
                 <tr>
+                    <th>@Html.DisplayNameFor(model => model.Books.BookName)</th>
+                    <th>@Html.DisplayNameFor(model => model.BookId)</th>
+                    <th>@Html.DisplayNameFor(model => model.Books.ISBN)</th>
                     <th>@Html.DisplayNameFor(model => model.StartDate)</th>
                     <th>@Html.DisplayNameFor(model => model.EndDate)</th>
                     <th>@Html.DisplayNameFor(model => model.Returned)</th>
-                    <th>@Html.DisplayNameFor(model => model.CustomerId)</th>
-                    <th>@Html.DisplayNameFor(model => model.BookId)</th>
                 </tr>
             </thead>
             <tbody>
-                @if (Model == null)
-                {
-                    <h2>Nothing here</h2>
-                }
-                else
-                {
                     @foreach (var i in Model)
                     {
                         <tr>
+                            <td>@Html.DisplayFor(modelitem => i.Books.BookName)</td>
+                            <td>@Html.DisplayFor(modelitem => i.BookId)</td>
+                            <th>@Html.DisplayFor(modelitem => i.Books.ISBN)</th>
                             <td>@Html.DisplayFor(modelitem => i.StartDate)</td>
                             <td>@Html.DisplayFor(modelitem => i.EndDate)</td>
-                            <td>@Html.DisplayFor(modelitem => i.Returned)</td>
-                            <td>@Html.DisplayFor(modelitem => i.CustomerId)</td>
-                            <td>@Html.DisplayFor(modelitem => i.BookId)</td>
+                            <th>@Html.DisplayFor(modelitem => i.Returned)</th>
                         </tr>
                     }
-                }
-
+                
             </tbody>
         </table>
     </div>

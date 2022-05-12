@@ -10,13 +10,22 @@ namespace Lab4MVC.Models
     {
         [Key]
         public int CustomerId { get; set; }
+        [Required(ErrorMessage = "Please enter first name.")]
+        [MinLength(5)]
+        [MaxLength(15)]
+        public string FirstName { get; set; }
+        [Required(ErrorMessage = "Please enter last name.")]
+        [MinLength(5)]
+        [MaxLength(15)]
+        public string LastName { get; set; }
+
         [Required]
         [MinLength(5)]
-        [MaxLength(50)]
-        public string Name { get; set; }
-        [Required]
+        [MaxLength(15)]
         public string PhoneNumber { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Please enter Gender.")]
+        [MinLength(4)]
+        [MaxLength(17)]
         public string Gender { get; set; }
 
         public ICollection<LinkTable> LinkTables { get; set; }

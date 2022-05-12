@@ -17,6 +17,10 @@ namespace Lab4MVC.Controllers
         }
         public ViewResult BookByCustomer(int id)
         {
+            if (ModelState.IsValid)
+            {
+
+            }
             return View(_bookRepository.GetAllBooksForCustomer(id));
         }
     }

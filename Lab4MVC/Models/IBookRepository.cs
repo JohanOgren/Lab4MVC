@@ -8,6 +8,5 @@ namespace Lab4MVC.Models
     public interface IBookRepository
     {
         IEnumerable<LinkTable> GetAllBooksForCustomer(int id);
-
     }
 }

@@ -1,4 +1,7 @@
 ﻿@model Lab4MVC.Models.Customer
+@{
+    ViewData["Title"] = "Search By Id";
+}
 <html>
 <head>
     <meta charset="utf-8" />
@@ -8,13 +11,19 @@
 </head>
 <body>
     <div style="font-family:Arial">
-        <h2>List</h2>
-
+        <h2>Customer By Id</h2>
+        @using (Html.BeginForm("CustomerById", "Customer", FormMethod.Get))
+        {
+            <p>
+                Search Id NR : @Html.TextBox("id") <input type="submit" value="Search" />
+            </p>
+        }
         <table border="1">
             <thead>
                 <tr>
                     <th>@Html.DisplayNameFor(model => model.CustomerId)</th>
-                    <th>@Html.DisplayNameFor(model => model.Name)</th>
+                    <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+                    <th>@Html.DisplayNameFor(model => model.LastName)</th>
                     <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
                     <th>@Html.DisplayNameFor(model => model.Gender)</th>
                 </tr>
@@ -22,21 +31,21 @@
             <tbody>
                 @if (Model == null)
                 {
-                    <h2>Nothing here</h2>
+                    <h3>Invalid Id</h3>
                 }
                 else
                 {
-                        <tr>
-                            <td>@Html.DisplayFor(modelitem => modelitem.CustomerId)</td>
-                            <td>@Html.DisplayFor(modelitem => modelitem.Name)</td>
-                            <td>@Html.DisplayFor(modelitem => modelitem.PhoneNumber)</td>
-                            <td>@Html.DisplayFor(modelitem => modelitem.Gender)</td>
-                        </tr>
+                    <tr>
+                        <td>@Html.DisplayFor(modelitem => modelitem.CustomerId)</td>
+                        <td>@Html.DisplayFor(modelitem => modelitem.FirstName)</td>
+                        <td>@Html.DisplayFor(modelitem => modelitem.LastName)</td>
+                        <td>@Html.DisplayFor(modelitem => modelitem.PhoneNumber)</td>
+                        <td>@Html.DisplayFor(modelitem => modelitem.Gender)</td>
+                    </tr>
                 }
-
             </tbody>
         </table>
-
+        <br />
     </div>
 </body>
 

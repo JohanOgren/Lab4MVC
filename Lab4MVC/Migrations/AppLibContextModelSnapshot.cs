@@ -108,18 +108,25 @@ namespace Lab4MVC.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(15)")
+                        .HasMaxLength(15);
+
                     b.Property<string>("Gender")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(17)")
+                        .HasMaxLength(17);
 
-                    b.Property<string>("Name")
+                    b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(15)")
+                        .HasMaxLength(15);
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(15)")
+                        .HasMaxLength(15);
 
                     b.HasKey("CustomerId");
 
@@ -129,36 +136,41 @@ namespace Lab4MVC.Migrations
                         new
                         {
                             CustomerId = 1,
+                            FirstName = "Tony",
                             Gender = "Male",
-                            Name = "Tony Stark",
+                            LastName = "Stark",
                             PhoneNumber = "0701231233"
                         },
                         new
                         {
                             CustomerId = 2,
+                            FirstName = "Natalia",
                             Gender = "Female",
-                            Name = "Natalia Romanoff",
+                            LastName = "Romanoff",
                             PhoneNumber = "0703332222"
                         },
                         new
                         {
                             CustomerId = 3,
+                            FirstName = "Bruce",
                             Gender = "Male",
-                            Name = "Bruce Banner",
+                            LastName = "Banner",
                             PhoneNumber = "07044422233"
                         },
                         new
                         {
                             CustomerId = 4,
+                            FirstName = "Wanda",
                             Gender = "Female",
-                            Name = "Wanda Maximoff",
+                            LastName = "Maximoff",
                             PhoneNumber = "0701113332"
                         },
                         new
                         {
                             CustomerId = 5,
+                            FirstName = "Thor",
                             Gender = "Male",
-                            Name = "Thor Odinson",
+                            LastName = "Odinson",
                             PhoneNumber = "0701337133"
                         });
                 });
@@ -260,7 +272,7 @@ namespace Lab4MVC.Migrations
                         new
                         {
                             LinkTableId = 8,
-                            BookId = 2,
+                            BookId = 1,
                             CustomerId = 5,
                             EndDate = new DateTime(2021, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Returned = true,
@@ -269,11 +281,65 @@ namespace Lab4MVC.Migrations
                         new
                         {
                             LinkTableId = 9,
-                            BookId = 1,
+                            BookId = 2,
                             CustomerId = 5,
                             EndDate = new DateTime(2021, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Returned = false,
                             StartDate = new DateTime(2021, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            LinkTableId = 10,
+                            BookId = 3,
+                            CustomerId = 5,
+                            EndDate = new DateTime(2021, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Returned = true,
+                            StartDate = new DateTime(2021, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            LinkTableId = 11,
+                            BookId = 4,
+                            CustomerId = 5,
+                            EndDate = new DateTime(2022, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Returned = false,
+                            StartDate = new DateTime(2022, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            LinkTableId = 12,
+                            BookId = 5,
+                            CustomerId = 5,
+                            EndDate = new DateTime(2022, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Returned = false,
+                            StartDate = new DateTime(2021, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            LinkTableId = 13,
+                            BookId = 6,
+                            CustomerId = 5,
+                            EndDate = new DateTime(2022, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Returned = true,
+                            StartDate = new DateTime(2022, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            LinkTableId = 14,
+                            BookId = 7,
+                            CustomerId = 5,
+                            EndDate = new DateTime(2015, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Returned = true,
+                            StartDate = new DateTime(2012, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            LinkTableId = 15,
+                            BookId = 8,
+                            CustomerId = 5,
+                            EndDate = new DateTime(2027, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Returned = true,
+                            StartDate = new DateTime(2014, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 

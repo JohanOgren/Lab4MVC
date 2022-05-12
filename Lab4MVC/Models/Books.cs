@@ -11,13 +11,13 @@ namespace Lab4MVC.Models
         [Key]
         public int BookId { get; set; }
         [Required]
+
         public string BookName { get; set; }
         [Required]
 
         public string ISBN { get; set; }
         [Required]
-
-        public string Author { get; set; }
+         public string Author { get; set; }
 
         public ICollection<LinkTable> LinkTables { get; set; }
     }

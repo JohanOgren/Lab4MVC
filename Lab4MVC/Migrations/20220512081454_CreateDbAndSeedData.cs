@@ -28,9 +28,10 @@ namespace Lab4MVC.Migrations
                 {
                     CustomerId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(maxLength: 50, nullable: false),
-                    PhoneNumber = table.Column<string>(nullable: false),
-                    Gender = table.Column<string>(nullable: false)
+                    FirstName = table.Column<string>(maxLength: 15, nullable: false),
+                    LastName = table.Column<string>(maxLength: 15, nullable: false),
+                    PhoneNumber = table.Column<string>(maxLength: 15, nullable: false),
+                    Gender = table.Column<string>(maxLength: 17, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -83,14 +84,14 @@ namespace Lab4MVC.Migrations
 
             migrationBuilder.InsertData(
                 table: "Customers",
-                columns: new[] { "CustomerId", "Gender", "Name", "PhoneNumber" },
+                columns: new[] { "CustomerId", "FirstName", "Gender", "LastName", "PhoneNumber" },
                 values: new object[,]
                 {
-                    { 1, "Male", "Tony Stark", "0701231233" },
-                    { 2, "Female", "Natalia Romanoff", "0703332222" },
-                    { 3, "Male", "Bruce Banner", "07044422233" },
-                    { 4, "Female", "Wanda Maximoff", "0701113332" },
-                    { 5, "Male", "Thor Odinson", "0701337133" }
+                    { 1, "Tony", "Male", "Stark", "0701231233" },
+                    { 2, "Natalia", "Female", "Romanoff", "0703332222" },
+                    { 3, "Bruce", "Male", "Banner", "07044422233" },
+                    { 4, "Wanda", "Female", "Maximoff", "0701113332" },
+                    { 5, "Thor", "Male", "Odinson", "0701337133" }
                 });
 
             migrationBuilder.InsertData(
@@ -105,8 +106,14 @@ namespace Lab4MVC.Migrations
                     { 5, 5, 3, new DateTime(2020, 6, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), true, new DateTime(2020, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 6, 4, 3, new DateTime(2021, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), false, new DateTime(2021, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 7, 3, 4, new DateTime(2021, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), true, new DateTime(2021, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 8, 2, 5, new DateTime(2021, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), true, new DateTime(2021, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 9, 1, 5, new DateTime(2021, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), false, new DateTime(2021, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { 8, 1, 5, new DateTime(2021, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), true, new DateTime(2021, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 9, 2, 5, new DateTime(2021, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), false, new DateTime(2021, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 10, 3, 5, new DateTime(2021, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), true, new DateTime(2021, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 11, 4, 5, new DateTime(2022, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), false, new DateTime(2022, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 12, 5, 5, new DateTime(2022, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), false, new DateTime(2021, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 13, 6, 5, new DateTime(2022, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), true, new DateTime(2022, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 14, 7, 5, new DateTime(2015, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), true, new DateTime(2012, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 15, 8, 5, new DateTime(2027, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), true, new DateTime(2014, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.CreateIndex(

@@ -32,7 +32,7 @@ namespace Lab4MVC.Models
         public Customer GetCustomerById(int CustomerId)
         {
             return _dbContext.Customers.Where(c => c.CustomerId == CustomerId).FirstOrDefault();
-        } // Funkar by ID
+        } // Klar
 
         public Customer CreateNewCustomer(Customer customer)
         {
@@ -45,12 +45,12 @@ namespace Lab4MVC.Models
         {
             var update = _dbContext.Customers.Where(c => c.CustomerId == Id).FirstOrDefault();
             return update;
-        }
+        }// 1/2 Klar
         public Customer Update(Customer cust)
         {
             _dbContext.Customers.Update(cust);
             _dbContext.SaveChanges();
             return cust;
-        }
+        } // 2/2 Klar
     }
 }

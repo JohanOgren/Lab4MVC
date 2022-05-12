@@ -11,12 +11,15 @@ namespace Lab4MVC.Models
     {
         [Key]
         public int LinkTableId { get; set; }
+        [Required]
         public int CustomerId { get; set; }
+        [Required]
         public int BookId { get; set; }
-
+        [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime StartDate { get; set; }
+        [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime EndDate { get; set; }

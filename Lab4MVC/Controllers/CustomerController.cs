@@ -21,7 +21,7 @@ namespace Lab4MVC.Controllers
             return View(_customerRepository.GetAllCustomers);
         }
 
-        public ViewResult CustomerById(int id)
+        public IActionResult CustomerById(int id)
         {
             return View(_customerRepository.GetCustomerById(id));
         }
@@ -33,7 +33,7 @@ namespace Lab4MVC.Controllers
             return tillbaka;
         }
 
-        public ActionResult Create(Customer customer)
+        public IActionResult Create(Customer customer)
         {
             if (ModelState.IsValid)
             {
